@@ -23,10 +23,10 @@ class TratativasAmazon:
             return None
 
         try:
-            self.df.columns = self.df.columns.str.lower().str.strip().str.replace(' ', '_')
+            self.df.columns = self.df.columns.str.lower().str.strip().str.replace(' ', '_').str.replace('-', '_')
             self.df['category'] = self.df['category'].str.strip().str.title()
             self.df['fulfilment'] = self.df['fulfilment'].str.lower().str.strip().str.replace('merchant', 'vendedor')
-            self.df['date'] = pd.to_datetime(self.df['date'])
+            self.df['date'] = pd.to_datetime(self.df['date'], dayfirst=True)
 
 
             if self.df['amount'].isnull().any():
