@@ -1,6 +1,6 @@
 import pandas as pd
 
-class ProcessadorAmazon:
+class TratativasAmazon:
 
     def __init__(self, caminho):
         self.caminho = caminho

@@ -1,3 +1,3 @@
-from data.Dados import ProcessadorAmazon
+from data.Dados import TratativasAmazon
 
-teste = ProcessadorAmazon()
+teste = TratativasAmazon()
