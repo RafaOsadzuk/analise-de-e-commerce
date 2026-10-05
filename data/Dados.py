@@ -27,6 +27,7 @@ class TratativasAmazon:
             self.df['category'] = self.df['category'].str.strip().str.title()
             self.df['fulfilment'] = self.df['fulfilment'].str.lower().str.strip().str.replace('merchant', 'vendedor')
             self.df['date'] = pd.to_datetime(self.df['date'], dayfirst=True)
+            self.df['ship_city'] = self.df['ship_city'].str.upper()
 
 
             if self.df['amount'].isnull().any():

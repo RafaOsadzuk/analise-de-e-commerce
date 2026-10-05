@@ -7,7 +7,7 @@ class AnalisadorAmazon:
 
 
     def calcula_ticket_medio(self):
-        return self.df['amount'].mean()
+        return self.df.groupby('order_id')['amount'].sum().mean()
 
     def produto_mais_vendido(self):
         return self.df['category'].value_counts().index[0]
@@ -35,3 +35,5 @@ class AnalisadorAmazon:
         except Exception as e:
             print(f"Erro ao exportar o relatório: {e}")
             return False
+
+
